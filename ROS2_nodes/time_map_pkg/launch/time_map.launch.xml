@@ -1,0 +1,9 @@
+<launch>
+  <node pkg="time_map_pkg" exec="particle_filter" name="particle_filter" output="screen">
+    <param from="$(find-pkg-share time_map_pkg)/config/time_map_config.yaml" />
+  </node>
+  
+  <node pkg="time_map_pkg" exec="coordinator" name="coordinator" output="screen">
+    <param from="$(find-pkg-share time_map_pkg)/config/time_map_config.yaml" />
+  </node>
+</launch>

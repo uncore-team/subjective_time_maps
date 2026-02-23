@@ -1,0 +1,20 @@
+particle_filter:
+  ros__parameters:
+    num_particles: 100
+    process_noise_x: 0.01
+    process_noise_y: 0.01
+    process_noise_theta: 0.005
+    init_x: -2.4250260841531963
+    init_y: 1.0250034225734461
+
+# 1: ground truth, 2: fp standard, 3: fp average time map
+coordinator:
+  ros__parameters:
+    experiment: 2
+    estimation_method: 1    # for experiment 2 only 0: best particle, 1: weighted average
+    cloud_topic: "particles_cloud"
+    cmd_vel_topic: "cmd_vel"
+    ask_z_topic: "ask_z"
+    map_query_topic: "map_value_at"
+    ground_truth_topic: "ground_truth"
+    get_query_topic: "get_map_value"
